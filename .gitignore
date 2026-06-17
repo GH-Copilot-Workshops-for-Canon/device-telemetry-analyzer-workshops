@@ -1,0 +1,7 @@
+build/
+fixtures/actual/*
+!fixtures/actual/.gitkeep
+*.log.tmp
+bin/
+obj/
+.DS_Store

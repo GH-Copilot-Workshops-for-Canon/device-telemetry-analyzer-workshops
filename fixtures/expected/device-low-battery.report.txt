@@ -1,0 +1,7 @@
+Device: sensor-09
+Status: WARN
+Warnings: 1
+- LOW_BATTERY: battery below 20%
+Errors: 0
+Operator summary: attention required
+Next step: inspect warning list

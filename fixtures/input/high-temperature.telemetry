@@ -1,0 +1,2 @@
+device=sensor-34;type=STATUS;ts=2026-06-16T09:03:00Z;payload=ok;checksum=AA34;battery=0.66
+device=sensor-34;type=METRIC;ts=2026-06-16T09:03:10Z;payload=temp;checksum=AA35;metric=temperature;value=78.4;unit=C

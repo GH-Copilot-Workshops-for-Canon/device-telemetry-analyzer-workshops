@@ -1,0 +1,28 @@
+# Copilot instructions
+
+This repository is a workshop legacy-style telemetry analyzer.
+
+Prefer small, reviewable changes. Preserve public contracts unless the task
+explicitly asks for a behavior change.
+
+For parser and report refactoring:
+
+- do not change public function signatures in `core/include/dta/telemetry.h`;
+- do not change report text format without running `make golden`;
+- do not change parser error codes without updating tests and documentation;
+- keep validation order explicit and verify it with tests.
+
+Before changing legacy behavior, propose a characterization test or golden
+master check. Treat documentation as useful context, not as the source of
+truth.
+
+Never include real secrets, customer data or production logs in examples. The
+secret in `config/operator-lab.env` is fake and exists only for training.
+
+Useful commands:
+
+- `make build`
+- `make test`
+- `make test-parser`
+- `make golden`
+- `make scenario-empty-payload`

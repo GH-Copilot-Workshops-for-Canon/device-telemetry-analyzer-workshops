@@ -1,0 +1,49 @@
+diff --git a/core/src/parser/telemetry_parser.cpp b/core/src/parser/telemetry_parser.cpp
+index 0000000..1111111 100644
+--- a/core/src/parser/telemetry_parser.cpp
++++ b/core/src/parser/telemetry_parser.cpp
+@@ -72,20 +72,18 @@ ParseResult parseTelemetryLine(const std::string& line) {
+         return result;
+     }
+ 
+-    // Legacy behavior: checksum is validated before payload presence.
+-    // This means an empty STATUS payload with checksum 0000 reports CHECKSUM_MISMATCH.
+-    if (!checksumLooksValid(result.frame.checksum)) {
+-        result.status = ParseStatus::InvalidChecksum;
+-        result.errorCode = "CHECKSUM_MISMATCH";
+-        result.message = "checksum did not match telemetry frame";
+-        return result;
+-    }
+-
+     if (result.frame.payload.empty() && result.frame.type != FrameType::Heartbeat) {
+         result.status = ParseStatus::MissingPayload;
+         result.errorCode = "EMPTY_PAYLOAD";
+         result.message = "payload is required for this frame type";
+         return result;
+     }
++
++    if (!checksumLooksValid(result.frame.checksum)) {
++        result.status = ParseStatus::InvalidChecksum;
++        result.errorCode = "CHECKSUM_MISMATCH";
++        result.message = "checksum did not match telemetry frame";
++        return result;
++    }
+ 
+     result.status = ParseStatus::Ok;
+     result.errorCode = "";
+diff --git a/fixtures/expected/device-status-001.report.txt b/fixtures/expected/device-status-001.report.txt
+index 0000000..1111111 100644
+--- a/fixtures/expected/device-status-001.report.txt
++++ b/fixtures/expected/device-status-001.report.txt
+@@ -1,7 +1,7 @@
+ Device: sensor-17
+-Status: WARN
+-Warnings: 1
+-- COMBINED_SIGNAL: status and metrics observed together
++Status: OK
++Warnings: 0
+ Errors: 0
+-Operator summary: attention required
+-Next step: inspect warning list
++Operator summary: no action required
++Next step: continue monitoring

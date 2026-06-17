@@ -1,0 +1,8 @@
+Device: sensor-34
+Status: WARN
+Warnings: 2
+- COMBINED_SIGNAL: status and metrics observed together
+- HIGH_TEMPERATURE: temperature over threshold
+Errors: 0
+Operator summary: attention required
+Next step: inspect warning list

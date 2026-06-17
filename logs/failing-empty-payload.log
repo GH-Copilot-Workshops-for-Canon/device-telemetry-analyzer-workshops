@@ -1,0 +1,4 @@
+2026-06-16T08:30:01Z INFO scenario=empty-payload input=fixtures/input/empty-payload-regression.telemetry
+2026-06-16T08:30:01Z INFO parser frame=device=sensor-17 type=STATUS checksum=AB12 payload=<empty>
+2026-06-16T08:30:01Z WARN analyzer error=EMPTY_PAYLOAD message="payload is required for this frame type"
+2026-06-16T08:30:01Z INFO report status=ERROR errors=1 warnings=0

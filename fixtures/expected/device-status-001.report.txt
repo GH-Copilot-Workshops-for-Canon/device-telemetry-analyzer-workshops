@@ -1,0 +1,7 @@
+Device: sensor-17
+Status: WARN
+Warnings: 1
+- COMBINED_SIGNAL: status and metrics observed together
+Errors: 0
+Operator summary: attention required
+Next step: inspect warning list

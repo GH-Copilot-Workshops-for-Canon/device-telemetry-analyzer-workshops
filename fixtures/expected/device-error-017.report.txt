@@ -1,0 +1,7 @@
+Device: sensor-44
+Status: ERROR
+Warnings: 0
+Errors: 1
+- E-017: device reported critical
+Operator summary: intervention required
+Next step: open incident ticket
